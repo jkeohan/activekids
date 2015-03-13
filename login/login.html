@@ -1,0 +1,16 @@
+<div class="modal-body text-center">
+	<a class="btn btn-fb large fb js-fb-login full-width" style="margin-top: 30px" ng-click="facebookLogin()">Log In with Facebook</a>
+	<div style="margin-top: 28px; margin-bottom: 26px">
+		<p class="font-16">or</p>
+	</div>
+	<div style="margin-bottom: 30px">
+		<form role="form" class="form-horizontal text-center" name="loginUserForm" novalidate>
+			<input style="margin-bottom: 20px; margin-left: 26px; width: 80%" type="email" class="form-control" id="loginEmail" placeholder="Email" name="loginEmail" ng-model="loginUser.email" tabindex="1" required>
+    	<input style="margin-bottom: 20px; margin-left: 26px; width: 80%" type="password" class="form-control" id="loginUserPassword" placeholder="Password" name="loginPassword" ng-model="loginUser.password" tabindex="2" required>
+			<input type="submit" class="btn btn-fb large green full-width" tabindex="3" ng-click="submitLoginPassword()" value="Log In">
+			<p ng-show="errorMessage" class="help-block error-red">{{ errorMessage }}</p>
+			<p ng-show="loginUserForm.loginEmail.$invalid && loginPasswordSubmitted" class="help-block error-red">Enter a valid email address</p>
+		</form>
+	</div>
+</div>
+

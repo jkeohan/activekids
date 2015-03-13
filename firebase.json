@@ -1,0 +1,18 @@
+{
+  "firebase": "activekids",
+  "public": ".",
+  "ignore": [
+    "firebase.json",
+    "**/.*",
+    "**/app/**",
+    "package.json",
+    "karma.conf.js",
+    "bower.json",
+    "**/node_modules/**"
+  ],
+	"rewrites": [ {
+  	"source": "**",
+  	"destination": "/index.html"
+	}]
+}
+

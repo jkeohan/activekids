@@ -1,0 +1,329 @@
+<div class="container">
+	<div class="row">
+		<img ng-src="images/background.png" id="background">
+		<div class="col-md-2">
+		</div>
+    <div class="col-md-8 col-sm-12 text-center color-background-page-header" style="padding-left: 10%; padding-right: 10%; padding-top: 30px; margin-top: 40px; border-radius: 80px; border: 1px #E0E0E0 solid">
+    <form role="form" class="form-horizontal" name="userInfo" novalidate>
+    	<div ng-show="surveyQuestion === 1">	
+      <!-- <h3 class="color-heading-orange"><strong>Great!</strong></h3> -->
+      <h3><strong>Welcome!</strong></h3>
+				<div class="form-group" ng-class="{ 'has-error' : userInfo.firstName.$invalid && submitted }">
+					<h3 style="margin-bottom: 30px"><strong>What's your first name?</strong></h3>
+					<div style="padding-left: 30%; padding-right: 30%; margin-bottom: 10px">
+    				<input class="form-control" placeholder="First name" name="firstName" ng-model="formInfo.firstName" required>
+    			</div>
+    			<p ng-show="userInfo.firstName.$invalid && firstNameSubmitted" class="help-block error-orange" style="margin-top: 10px">Please tell us your name</p>
+    			<div style="padding-left: 20%; padding-right: 20%">
+    				<div class="progress" style="margin-top: 40px">
+  						<div class="progress-bar progress-bar-info progress-bar-striped active" role="progressbar" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100" style="width: 5%">
+    						<span class="sr-only">5% Complete</span>
+  						</div>
+						</div>
+					</div>
+					<p class="font-16 color-blue">1 of 4</p>
+					<br>
+					<a href="" ng-click="firstNameSubmit()" class="btn-blue">Next <span class="glyphicon glyphicon-chevron-right" style="font-size: 14px" aria-hidden="true"></span></a>
+					<br>
+					<p>&nbsp;</p>
+    		</div>
+  		</div>
+  		 <div ng-show="surveyQuestion === 2">	
+				<h3 style="margin-bottom: 20px"><strong>Hi {{formInfo.firstName}}!</strong></h3>
+				<h3><strong>How old are you?</strong></h3>
+				<br>
+  			<div class="form-group text-center">
+					<select class="form-control" style="width: initial; margin-left: auto; margin-right: auto" ng-model="formInfo.age">
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+						<option value="11">11</option>
+						<option value="12">12</option>
+						<option value="13">13</option>
+          </select>
+          <br>
+					<p ng-show="!formInfo.age && ageSubmitted" class="help-block error-orange" style="margin-top: 10px">Please tell us your age</p>
+				</div>
+				<div style="padding-left: 20%; padding-right: 20%">
+    				<div class="progress" style="margin-top: 40px">
+  						<div class="progress-bar progress-bar-info progress-bar-striped active" role="progressbar" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100" style="width: 40%">
+    						<span class="sr-only">40% Complete</span>
+  						</div>
+						</div>
+					</div>
+					<p class="font-16 color-blue">2 of 4</p>
+					<br>
+					<a href="" ng-click="surveyQuestion = 1" class="btn-grey" style="margin-right: 5px"><span class="glyphicon glyphicon-chevron-left" style="font-size: 14px" aria-hidden="true"></span> Back</a>
+					<a href="" ng-click="ageSubmit()" class="btn-blue">Next <span class="glyphicon glyphicon-chevron-right" style="font-size: 14px" aria-hidden="true"></span></a>
+					<br>
+					<p>&nbsp;</p>
+			</div>
+  		<div ng-show="surveyQuestion === 3">	
+				<h3 style="margin-bottom: 20px"><strong>Great!</strong></h3>
+				<h3><strong>What's your favorite animal?</strong></h3>
+				<br>
+  			<div class="form-group">
+					<div style="padding-left: 30%; padding-right: 30%; margin-bottom: 10px">
+    				<input class="form-control" placeholder="Favorite animal" name="favoriteAnimal" ng-model="formInfo.favoriteAnimal" required>
+    			</div>
+				</div>
+				<div style="padding-left: 20%; padding-right: 20%">
+    				<div class="progress" style="margin-top: 40px">
+  						<div class="progress-bar progress-bar-info progress-bar-striped active" role="progressbar" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100" style="width: 80%">
+    						<span class="sr-only">80% Complete</span>
+  						</div>
+						</div>
+					</div>
+					<p class="font-16 color-blue">3 of 4</p>
+					<br>
+					<a href="" ng-click="surveyQuestion = 2" class="btn-grey" style="margin-right: 5px"><span class="glyphicon glyphicon-chevron-left" style="font-size: 14px" aria-hidden="true"></span> Back</a>
+					<a href="" ng-click="favoriteAnimalSubmit()" class="btn-blue" style="margin-left: 5px">Next <span class="glyphicon glyphicon-chevron-right" style="font-size: 14px" aria-hidden="true"></span></a>
+					<br>
+					<p>&nbsp;</p>
+			</div>
+ <!--  		<div ng-show="surveyQuestion === 4">	
+				<h3 class="color-heading-orange" style="margin-bottom: 20px"><strong>Which of these activities do you like?</strong></h3>
+				<p class="color-heading-orange font-20">(Select all that apply)</p>
+				<br>
+  			<div class="form-group" style="text-align: left; padding-left: 30px">
+					<label class="checkbox-inline survey-activity-width"><input type="checkbox" name="activities" ng-model="formInfo.activities.happyHours">Happy Hours</label>
+					<label class="checkbox-inline survey-activity-width"><input type="checkbox" name="activities" ng-model="formInfo.activities.liveMusic">Live Music</label>
+					<label class="checkbox-inline survey-activity-width"><input type="checkbox" name="activities" ng-model="formInfo.activities.wineTasting">Wine Tasting</label>
+					<label class="checkbox-inline survey-activity-width"><input type="checkbox" name="activities" ng-model="formInfo.activities.volunteerEvents">Volunteer Events</label>
+					<label class="checkbox-inline  survey-activity-width"><input type="checkbox" name="activities" ng-model="formInfo.activities.museumTours">Museum Tours</label>
+					<label class="checkbox-inline  survey-activity-width"><input type="checkbox" name="activities" ng-model="formInfo.activities.hiking">Hiking</label>
+					<label class="checkbox-inline  survey-activity-width"><input type="checkbox" name="activities" ng-model="formInfo.activities.triviaNights">Trivia Nights</label>
+					<label class="checkbox-inline  survey-activity-width"><input type="checkbox" name="activities" ng-model="formInfo.activities.danceLessons">Dance Lessons</label>
+					<label class="checkbox-inline  survey-activity-width"><input type="checkbox" name="activities" ng-model="formInfo.activities.comedyShows">Comedy Shows</label>
+					<label class="checkbox-inline  survey-activity-width"><input type="checkbox" name="activities" ng-model="formInfo.activities.cookingLessons">Cooking Lessons</label>
+					<label class="checkbox-inline  survey-activity-width"><input type="checkbox" name="activities" ng-model="formInfo.activities.bowling">Bowling</label>
+					<label class="checkbox-inline  survey-activity-width"><input type="checkbox" name="activities" ng-model="formInfo.activities.sailingLessons">Sailing Lessons</label>
+					<label class="checkbox-inline  survey-activity-width"><input type="checkbox" name="activities" ng-model="formInfo.activities.battingCages">Batting Cages</label>
+					<label class="checkbox-inline  survey-activity-width"><input type="checkbox" name="activities" ng-model="formInfo.activities.golfLessons">Golf Lessons</label>
+					<label class="checkbox-inline  survey-activity-width"><input type="checkbox" name="activities" ng-model="formInfo.activities.kayaking">Kayaking</label>
+					<p ng-show="!formInfo.activities && activitiesSubmitted" class="help-block error-orange" style="margin-top: 10px">None? There's got to be one that's at least kinda fun.</p>
+				</div>
+				<div style="padding-left: 20%; padding-right: 20%">
+    				<div class="progress" style="margin-top: 40px">
+  						<div class="progress-bar progress-bar-warning progress-bar-striped active" role="progressbar" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100" style="width: 40%">
+    						<span class="sr-only">40% Complete</span>
+  						</div>
+						</div>
+					</div>
+					<p class="font-16 color-heading-orange">4 of 10</p>
+					<br>
+					<a href="" ng-click="surveyQuestion = 3" class="btn-invite-grey" style="margin-right: 5px"><span class="glyphicon glyphicon-chevron-left" style="font-size: 14px" aria-hidden="true"></span> Back</a>
+					<a href="" ng-click="activitiesSubmit()" class="btn-invite">Next <span class="glyphicon glyphicon-chevron-right" style="font-size: 14px" aria-hidden="true"></span></a>
+					<br>
+					<p>&nbsp;</p>
+			</div>
+			<div ng-show="surveyQuestion === 5">	
+				<h3 class="color-heading-orange" style="margin-bottom: 20px"><strong>What do you like talking about with your friends?</strong></h3>
+				<p class="color-heading-orange font-18">(Select all that apply)</p>
+				<br>
+  			<div class="form-group">			
+					<label class="checkbox-inline survey-topics-width"><input type="checkbox" name="topics" ng-model="formInfo.topics.art">Art‎</label>
+					<label class="checkbox-inline survey-topics-width"><input type="checkbox" name="topics" ng-model="formInfo.topics.books">Books</label>
+					<label class="checkbox-inline survey-topics-width"><input type="checkbox" name="topics" ng-model="formInfo.topics.celebrities">Celebs</label>
+					<label class="checkbox-inline survey-topics-width"><input type="checkbox" name="topics" ng-model="formInfo.topics.fashion">Fashion‎</label>
+					<label class="checkbox-inline survey-topics-width"><input type="checkbox" name="topics" ng-model="formInfo.topics.movies">Movies‎</label>
+					<label class="checkbox-inline survey-topics-width"><input type="checkbox" name="topics" ng-model="formInfo.topics.music">Music‎</label>
+					<label class="checkbox-inline survey-topics-width"><input type="checkbox" name="topics" ng-model="formInfo.topics.sports">Sports‎</label>
+					<label class="checkbox-inline survey-topics-width"><input type="checkbox" name="topics" ng-model="formInfo.topics.technology">Tech</label>
+					<label class="checkbox-inline survey-topics-width"><input type="checkbox" name="topics" ng-model="formInfo.topics.other">Other</label>
+					<p ng-show="!formInfo.topics && topicsSubmitted" class="help-block error-orange" style="margin-top: 10px">You must talk about something, right?</p>
+				</div>
+				<div style="padding-left: 20%; padding-right: 20%">
+    				<div class="progress" style="margin-top: 40px">
+  						<div class="progress-bar progress-bar-warning progress-bar-striped active" role="progressbar" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100" style="width: 50%">
+    						<span class="sr-only">50% Complete</span>
+  						</div>
+						</div>
+					</div>
+					<p class="font-16 color-heading-orange">5 of 10</p>
+					<br>
+					<a href="" ng-click="surveyQuestion = 4" class="btn-invite-grey" style="margin-right: 5px"><span class="glyphicon glyphicon-chevron-left" style="font-size: 14px" aria-hidden="true"></span> Back</a>
+					<a href="" ng-click="topicsSubmit()" class="btn-invite">Next <span class="glyphicon glyphicon-chevron-right" style="font-size: 14px" aria-hidden="true"></span></a>
+					<br>
+					<p>&nbsp;</p>
+			</div>
+			<div ng-show="surveyQuestion === 6">	
+				<h3 class="color-heading-orange" style="margin-bottom: 20px"><strong>You're halfway there!</strong></h3>
+				<h3 class="color-heading-orange" style="margin-bottom: 20px"><strong>How would your friends describe you?</strong></h3>
+				<p class="color-heading-orange font-18">(Select all that apply)</p>
+				<br>
+  			<div class="form-group">			
+      		<label class="checkbox-inline survey-dscribe-width"><input type="checkbox" name="friendsDescribe" ng-model="formInfo.friendsDescribe.artsy"> Artsy</label>
+      		<label class="checkbox-inline survey-dscribe-width"><input type="checkbox" name="friendsDescribe" ng-model="formInfo.friendsDescribe.homebody"> Homebody</label>
+      		<label class="checkbox-inline survey-dscribe-width"><input type="checkbox" name="friendsDescribe" ng-model="formInfo.friendsDescribe.lifeOfParty"> Life of Party</label>
+      		<label class="checkbox-inline survey-dscribe-width"><input type="checkbox" name="friendsDescribe" ng-model="formInfo.friendsDescribe.professional"> Professional</label>
+      		<label class="checkbox-inline survey-dscribe-width"><input type="checkbox" name="friendsDescribe" ng-model="formInfo.friendsDescribe.socialButterfly"> Social Butterfly</label>
+      		<label class="checkbox-inline survey-dscribe-width"><input type="checkbox" name="friendsDescribe" ng-model="formInfo.friendsDescribe.sportsNut"> Sports Nut</label>
+      		<label class="checkbox-inline survey-dscribe-width"><input type="checkbox" name="friendsDescribe" ng-model="formInfo.friendsDescribe.techEnthusiast"> Tech Enthusiast</label>
+      		<p ng-show="!formInfo.friendsDescribe && friendsDescribeSubmitted" class="help-block error-orange" style="margin-top: 10px">Hopefully you're friends have SOMETHING nice to say about you!</p>
+				</div>
+				<div style="padding-left: 20%; padding-right: 20%">
+    				<div class="progress" style="margin-top: 40px">
+  						<div class="progress-bar progress-bar-warning progress-bar-striped active" role="progressbar" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100" style="width: 60%">
+    						<span class="sr-only">60% Complete</span>
+  						</div>
+						</div>
+					</div>
+					<p class="font-16 color-heading-orange">6 of 10</p>
+					<br>
+					<a href="" ng-click="surveyQuestion = 5" class="btn-invite-grey" style="margin-right: 5px"><span class="glyphicon glyphicon-chevron-left" style="font-size: 14px" aria-hidden="true"></span> Back</a>
+					<a href="" ng-click="friendsDescribeSubmit()" class="btn-invite">Next <span class="glyphicon glyphicon-chevron-right" style="font-size: 14px" aria-hidden="true"></span></a>
+					<br>
+					<p>&nbsp;</p>
+			</div>
+			<div ng-show="surveyQuestion === 7">	
+				<h3 class="color-heading-orange"><strong>Tell us a little about yourself</strong></h3>
+				<br>
+  			<div class="form-group">			
+    				<textarea class="form-control" ng-model="formInfo.extraInfo" rows="6" name="extraInfo" placeholder="e.g. I moved here from San Francisco a few months ago. I like going to happy hours after work and playing volleyball on the weekends. I laugh easily and get along with almost everyone."  required></textarea>
+    				<p ng-show="userInfo.extraInfo.$error.required && extraInfoSubmitted" class="help-block error-orange" style="margin-top: 10px">Please write something so other members can get to know you a little better!</p>
+				</div>
+				<div style="padding-left: 20%; padding-right: 20%">
+    				<div class="progress" style="margin-top: 40px">
+  						<div class="progress-bar progress-bar-warning progress-bar-striped active" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width: 70%">
+    						<span class="sr-only">70% Complete</span>
+  						</div>
+						</div>
+					</div>
+					<p class="font-16 color-heading-orange">7 of 10</p>
+					<br>
+					<a href="" ng-click="surveyQuestion = 6" class="btn-invite-grey" style="margin-right: 5px"><span class="glyphicon glyphicon-chevron-left" style="font-size: 14px" aria-hidden="true"></span> Back</a>
+					<a href="" ng-click="extraInfoSubmit()" class="btn-invite">Next <span class="glyphicon glyphicon-chevron-right" style="font-size: 14px" aria-hidden="true"></span></a>
+					<br>
+					<p>&nbsp;</p>
+			</div>
+			<div ng-show="surveyQuestion === 8">	
+				<h3 class="color-heading-orange"><strong>What kind of people are you looking to meet?</strong></h3>
+				<br>
+  			<div class="form-group">			
+    				<textarea class="form-control" ng-model="formInfo.friendsType" rows="6" name="friendsType" placeholder="e.g. I'd like to meet people who are up for going to happy hours after work or playing sports on the weekends. I tend to get along with people who are smart and funny." required></textarea>
+    				<p ng-show="userInfo.friendsType.$error.required && friendsTypeSubmitted" class="help-block error-orange" style="margin-top: 10px">Please write something so other members can get to know you a little better!</p>
+				</div>
+				<div style="padding-left: 20%; padding-right: 20%">
+    				<div class="progress" style="margin-top: 40px">
+  						<div class="progress-bar progress-bar-warning progress-bar-striped active" role="progressbar" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100" style="width: 80%">
+    						<span class="sr-only">80% Complete</span>
+  						</div>
+						</div>
+					</div>
+					<p class="font-16 color-heading-orange">8 of 10</p>
+					<br>
+					<a href="" ng-click="surveyQuestion = 7" class="btn-invite-grey" style="margin-right: 5px"><span class="glyphicon glyphicon-chevron-left" style="font-size: 14px" aria-hidden="true"></span> Back</a>
+					<a href="" ng-click="friendsTypeSubmit()" class="btn-invite">Next <span class="glyphicon glyphicon-chevron-right" style="font-size: 14px" aria-hidden="true"></span></a>
+					<br>
+					<p>&nbsp;</p>
+			</div>
+			<div ng-show="surveyQuestion === 9">	
+				<h3 class="color-heading-orange" style="margin-bottom: 20px"><strong>You're doing great!</strong></h3>
+				<h3 class="color-heading-orange"><strong>What would a perfect weekend for you involve?</strong></h3>
+				<br>
+  			<div class="form-group">			
+    				<textarea class="form-control" ng-model="formInfo.perfectWeekend" rows="6" name="perfectWeekend" placeholder="e.g. A great weekend for me would include drinks after work on Friday, attending a concert Saturday night, and brunch with friends on Sunday. Oh...and definitely karaoke!"  required></textarea>
+    				<p ng-show="userInfo.perfectWeekend.$error.required && perfectWeekendSubmitted" class="help-block error-orange" style="margin-top: 10px">That seems like a boring weekend. There must be something you'd do!</p>
+				</div>
+				<div style="padding-left: 20%; padding-right: 20%">
+    				<div class="progress" style="margin-top: 40px">
+  						<div class="progress-bar progress-bar-warning progress-bar-striped active" role="progressbar" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100" style="width: 90%">
+    						<span class="sr-only">90% Complete</span>
+  						</div>
+						</div>
+					</div>
+					<p class="font-16 color-heading-orange">9 of 10</p>
+					<br>
+					<a href="" ng-click="surveyQuestion = 8" class="btn-invite-grey" style="margin-right: 5px"><span class="glyphicon glyphicon-chevron-left" style="font-size: 14px" aria-hidden="true"></span> Back</a>
+					<a href="" ng-click="perfectWeekendSubmit()" class="btn-invite">Next <span class="glyphicon glyphicon-chevron-right" style="font-size: 14px" aria-hidden="true"></span></a>
+					<br>
+					<p>&nbsp;</p>
+			</div>
+			<div ng-show="surveyQuestion === 10">	
+				<h3 class="color-heading-orange" style="margin-bottom: 20px"><strong>Describe an activity you'd like to do</strong></h3>
+				<p class="color-heading-orange font-18">(This will be posted as an activity others can join!)</p>
+				<br>
+  			<div class="form-group">
+  				<div style="border: 1px #E4E4E4 solid; padding: 20px 5px; border-radius: 5px; background-color: #FFFAF3">
+  				<p class="color-heading-orange bold font-18" style="display: inline-block">Let's go...</p>	
+    				<textarea class="form-control" style="display: inline-block; width: 70%; margin-bottom: 10px" ng-model="formInfo.letsGo" rows="2" name="letsGo" placeholder="to a happy hour at Ace Bar after work"  required></textarea>
+    				<br style="margin-bottom: 5px">
+    				<p class="color-heading-orange bold" style="display: inline-block">Gender</p>
+    				<select class="form-control font-condensed color-activity-grey" style="display: inline-block; width: initial;" ng-model="formInfo.genderInvite">
+                  <option value="Men and Women">Men and Women</option>
+                  <option value="Women Only">Women Only</option>
+                  <option value="Men Only">Men Only</option>
+                </select>
+                <p class="color-heading-orange bold" style="display: inline-block">&nbsp;&nbsp;&nbsp;# of People</p>
+                <select class="form-control font-condensed color-activity-grey" style="display: inline-block; width: initial;" ng-model="formInfo.numPeople">
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5+">5+</option>
+                </select>
+           </div>
+    				<div style="margin-top: 20px; text-align: left; padding-left: 20%">
+    					<p class="bold font-14">Here are some ideas if you're stuck:</p>
+    					<p>&nbsp;&nbsp;- to a happy hour after work
+    					<p>&nbsp;&nbsp;- bowling at The Gutter in Williamsburg</p>
+							<p>&nbsp;&nbsp;- play shuffleboard at Royal Palms in Gowanus</p>
+						</div>
+    				<p ng-show="letsGoSubmitted" class="help-block error-orange" style="margin-top: 10px">This is what you're here for! You can always change it later.</p>
+				</div>
+				<div style="padding-left: 20%; padding-right: 20%">
+    				<div class="progress" style="margin-top: 30px">
+  						<div class="progress-bar progress-bar-warning progress-bar-striped active" role="progressbar" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100" style="width: 100%">
+    						<span class="sr-only">100% Complete</span>
+  						</div>
+						</div>
+					</div>
+					<p class="font-16 color-heading-orange">10 of 10</p>
+					<br>
+					<a href="" ng-click="surveyQuestion = 9" class="btn-invite-grey" style="margin-right: 5px"><span class="glyphicon glyphicon-chevron-left" style="font-size: 14px" aria-hidden="true"></span> Back</a>
+					<a href="" ng-click="letsGoSubmit()" class="btn-invite">Next <span class="glyphicon glyphicon-chevron-right" style="font-size: 14px" aria-hidden="true"></span></a>
+					<br>
+					<p>&nbsp;</p>
+			</div> -->
+  		<div ng-show="surveyQuestion === 11">	
+					<h3 style="margin-bottom: 20px"><strong>One last thing.</strong></h3>
+					<h4>Select a photo or image for your avatar.</h4>
+					<br>
+  					<p class="uploader-blue-button">
+							<uploadcare-widget
+  							ng-model="object.image.info.uuid"
+  							data-public-key="demopublickey"
+  							data-locale="en"
+  							data-tabs="file facebook instagram camera"
+  							data-images-only="true"
+  							data-path-value="true"
+  							data-preview-step="true"
+  							data-clearable="true"
+  							data-multiple="false"
+  							data-crop="200:200"
+  							data-autostore="true"
+  							on-upload-complete="onUCUploadComplete(info)"
+  							on-widget-ready="onUCWidgetReady(widget)"
+  							value="{{ object.image.info.cdnUrl }}"
+ 							/>
+						</p>
+						<br>
+						<p ng-show="!imageReceived && photoSubmitted" class="help-block error-orange">Please upload an image for your profile</p>
+					<br>
+					<a class="btn-blue" tabindex="3" ng-click="photoSubmit()">Submit</a>
+					<div class="alert alert-info" style="margin-top: 10px" ng-show="loading">Loading...</div>
+					<br>
+					<p>&nbsp;</p>
+					<br>
+				</div>
+					<br>
+					<p>&nbsp;</p>
+			</div>
+		</form>
+		</div>
+		<div class="col-md-2">
+		</div>
+	</row>
+</div> <!-- container -->
+
