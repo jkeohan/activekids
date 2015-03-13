@@ -65,7 +65,7 @@ angular.module('myApp', [
   $routeProvider.otherwise({redirectTo: '/'});
   $locationProvider.html5Mode(true);
 })
-.constant('FIREBASE_URL', 'https://activekids.firebaseio.com/')
+.constant('FIREBASE_URL', 'https://radiant-inferno-7371.firebaseio.com/')
 .factory("CurrentAuth", function($firebaseAuth, FIREBASE_URL) {
   var refAuth = new Firebase(FIREBASE_URL);
   return $firebaseAuth(refAuth);
