@@ -1,7 +1,27 @@
 <div class="container">
   <div class="row" style="border-radius: 5px; margin-bottom: 2%; margin-top: 30px" ng-cloak>
     <div class="col-md-8 col-sm-12" style="padding: 0% 7%">
-    	<p style="padding-top: 40px" class="font-22 text-center">This page will have the form to input new activity data!</p>
+    	<p style="padding-top: 40px" class="font-22">Enter a new activity:</p>
+    	<form role="form" class="form-horizontal" name="activityInfo" novalidate>
+    		<div>
+					<select style="width: initial" ng-model="activityForm.activityType">
+            <option value="Run">Run</option>
+            <option value="Walk">Walk</option>
+          </select>
+				</div>
+				<div style="margin-top: 20px">
+    			<input name="activityMinutes" ng-model="activityForm.activityMinutes" style="width: 40px"required>
+    			<p style="display: inline-block; margin-left: 10px">Minutes</p>
+    		</div>
+    		<div style="margin-top: 20px">
+    			<input name="activityMiles" ng-model="activityForm.activityMiles" style="width: 40px" required>
+    			<p style="display: inline-block; margin-left: 10px">Miles</p>
+    		</div>
+    		<div style="margin-top: 20px">
+					<a href="" ng-click="activitySubmit()" class="btn-blue">Submit Activity</a>
+				</div>
+				<p ng-show="activitySuccess" style="margin-top: 20px">Activity Submitted Successfully!</p>
+			</form>
     </div> <!-- col-md-8 -->
 	</div> <!-- row -->
 </div> <!-- container -->

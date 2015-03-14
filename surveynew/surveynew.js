@@ -148,6 +148,7 @@ angular.module('myApp.surveynew', ['ngRoute'])
               climbOrRide: $scope.formInfo.climbOrRide,
               dogKind: $scope.formInfo.dogKind,
               dateSignUp: datetime,
+              activities: {"test": "test"},
               profilePic: $scope.imageUrl || ("https://graph.facebook.com/" + currentAuth.facebook.id +"/picture?type=large&width=200&height=200")
     }; // formData
   }; // surveyCaptureData
