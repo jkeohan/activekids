@@ -5,6 +5,13 @@
     	<p style="padding-top: 40px" class="font-22 text-center">Here's how data is added to the HTML page:</p>
     	<p style="padding-top: 10px" class="font-22 text-center">User Age: {{ profile.age }}</p>
     	<p style="padding-top: 10px" class="font-22 text-center">User FirstName: {{ profile.firstName }}</p>
+    	<br>
+    	<div ng-repeat="activity in userActivitiesArray">
+    		<p>Activity Type: {{ activity.activityType }}</p>
+    		<p>Minutes: {{ activity.activityMinutes }}</p>
+    		<p>Miles: {{ activity.activityMiles }}</p>
+    		<br>
+    	</div>
     </div> <!-- col-md-8 -->
 	</div> <!-- row -->
 </div> <!-- container -->
