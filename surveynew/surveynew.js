@@ -92,11 +92,11 @@ angular.module('myApp.surveynew', ['ngRoute'])
   };
 
   $scope.photoSubmit = function() {
-    $scope.photoSubmitted = true;
-    if ($scope.imageReceived) {
-      $scope.photoSubmitted = false;
+    // $scope.photoSubmitted = true;
+    // if ($scope.imageReceived) {
+    //   $scope.photoSubmitted = false;
       writeSurveyData();
-    };
+    // };
   };
 
   if (currentAuth.password) {
@@ -148,8 +148,8 @@ angular.module('myApp.surveynew', ['ngRoute'])
               climbOrRide: $scope.formInfo.climbOrRide,
               dogKind: $scope.formInfo.dogKind,
               dateSignUp: datetime,
-              activities: {"test": "test"},
-              profilePic: $scope.imageUrl || ("https://graph.facebook.com/" + currentAuth.facebook.id +"/picture?type=large&width=200&height=200")
+              profilePic: $scope.imageUrl || " "
+              // profilePic: $scope.imageUrl || ("https://graph.facebook.com/" + currentAuth.facebook.id +"/picture?type=large&width=200&height=200")
     }; // formData
   }; // surveyCaptureData
 

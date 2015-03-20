@@ -6,7 +6,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>ActiveKids</title>
+  <title>ActiveFAMILIES</title>
   <meta name="description" content="Keeping kids active!">
   <base href="/">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -21,7 +21,7 @@
   <script src="bower_components/html5-boilerplate/js/vendor/modernizr-2.6.2.min.js"></script>
   <script charset="utf-8" src="https://ucarecdn.com/widget/1.5.3/uploadcare/uploadcare.full.min.js"></script>
   <script>
-    UPLOADCARE_PUBLIC_KEY = 'demopublickey';
+    UPLOADCARE_PUBLIC_KEY = '4a041b6a44cc31069fea';
   </script>
 
 </head>
@@ -34,16 +34,16 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" ng-href="/" title="ActiveKids"><img style="width: 35px; height: 32px; margin-top: 3px" id="navbar-logo" ng-src="images/xxxxxx.jpg">&nbsp;<strong>Active</strong><strong class="color-green">KIDS</strong></a>
+          <a class="navbar-brand" ng-href="/" title="ActiveKids" style="padding-top: 14px"><strong>Active</strong><strong class="color-green">FAMILIES</strong></a>
         </div>
         <div ng-if="(currentUser && profile)">
           <div id="navbar" class="navbar-collapse navbar-right" ng-class="{collapse: isCollapsed}">
             <ul class="nav navbar-nav">
-              <li><a href="/people" analytics-on="click" analytics-event="Navbar: People" analytics-category="Navbar" style="font-size: 15px"><span class="glyphicon glyphicon-user"></span>&nbsp;&nbsp;Friends</a></li>
-              <li><a href="/graphs"><span class="glyphicon glyphicon-equalizer" style="font-size: 15px"></span>&#xe210;&nbsp;&nbsp;Graphs</a></li>
-              <li><a href="/activity"><span class="glyphicon glyphicon-tasks" style="font-size: 15px"></span>&nbsp;&nbsp;Activity</a></li>
-              <li><a href="/profile"><span class="glyphicon glyphicon-list-alt" style="font-size: 15px"></span>&nbsp;&nbsp;Profile</a></li>
-              <li><a href="" ng-click="logout()" style="font-size: 15px;">Logout</a></li>
+              <!-- <li><a href="/people" analytics-on="click" analytics-event="Navbar: People" analytics-category="Navbar" style="font-size: 15px"><span class="glyphicon glyphicon-user"></span>&nbsp;&nbsp;Friends</a></li> -->
+              <!-- <li><a style="font-size: 16px; color: white" href="/graphs"><span class="glyphicon glyphicon-equalizer" style="font-size: 16px; color: white"></span>&#xe210;&nbsp;&nbsp;Graphs</a></li>
+              <li><a style="font-size: 16px; color: white" href="/activity"><span class="glyphicon glyphicon-tasks" style="font-size: 16px; color: white"></span>&nbsp;&nbsp;Activity</a></li> -->
+              <!-- <li><a style="font-size: 16px; color: white" href="/profile"><span class="glyphicon glyphicon-list-alt" style="font-size: 16px; color: white"></span>&nbsp;&nbsp;Profile</a></li> -->
+              <li><a href="" ng-click="logout()" style="font-size: 16px; color: white">Logout</a></li>
             </ul>            
           </div>
         </div>

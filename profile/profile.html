@@ -1,10 +1,11 @@
 <div class="container">
-  <div class="row background-standard" style="margin-bottom: 2%; margin-top: 30px" ng-cloak>
-    <div class="col-md-4 text-center" >
-      <br>
+  <div class="col-md-3">
+    <div class="text-center" style="margin-bottom: 2%; margin-top: 40px; border: 1px lightgrey solid; background-color: #F2F2F2; border-radius: 20px" ng-cloak>
+      <p class="font-condensed bold" style="font-size: 36px; margin: 20px 0px 0px 0px;">{{ profile.firstName }}</p>
+      <p class="color-heading-orange bold font-condensed margin-0" style="font-size: 28px;">{{profile.age}} Years Old</span></p>
       <br>
       <img ng-src="{{ profile.profilePic }}" class="profile-pic-large shadow" style="margin-bottom: 30px">
-<!--       <p class="uploader-blue-button">
+       <p class="uploader-blue-button">
         <uploadcare-widget
           ng-model="object.image.info.uuid"
           data-public-key="4cae35605f451e88cb88"
@@ -16,28 +17,13 @@
           data-clearable="true"
           data-crop="200:200"
           data-autostore="true"
-          on-upload-complete="onUCUploadComplete(info)"
+          on-upload-complete="onUCUploadCompleteProfile(info)"
           on-widget-ready="onUCWidgetReady(widget)"
           value="{{ object.image.info.cdnUrl }}"
         />
-      </p> -->
+      </p>
       <br>
-   <!--  </div> -->
-    </div>
-    <div class="col-md-8" style="padding: 1% 3%">
-      <br>
-        <div class="clear-div">
-          <div style="float: left; width: 200px; padding-left: 20px">
-            <p class="font-condensed bold" style="font-size: 36px; margin: 20px 0px 0px 0px;">{{ profile.firstName }}</p>
-            <p class="color-heading-orange bold font-condensed margin-0" style="font-size: 28px;">{{profile.age}} Years Old</span></p>
-           <!--  <p ng-show="userSignUpDate" class="font-18 font-condensed color-activity-grey margin-0">Joined {{ profile.dateSignUp }}</p> -->
-          </div>
-          <div style="float: right; text-align: center; width: 300px; margin-right: 3%; margin-top: 5%; margin-bottom: 0px">
-            <a class="btn-green" href="/activity" role="button" style="margin-bottom: 10px; width: 100%; font-size: 20px">Add Activity</a>
-          </div>
-        </div>
-      <hr color="#E6E6E6">
-      <div style="border-radius: 40px; border: 1px #E6E6E5 solid; background-color: #FEFEFE; padding-left: 5%; padding-right: 5%; margin-bottom: 3%">
+      <div style="border-radius: 40px; border: 1px #E6E6E5 solid; background-color: #FEFEFE; padding-left: 5%; padding-right: 5%; margin-bottom: 3%; margin-right: 5%; margin-left: 5%">
           <p class="font-16 bold color-heading-orange margin-bottom-0" style="margin-top:30px">My Favorite Animal</p>
           <p class="font-16 margin-bottom-20">{{ profile.favoriteAnimal }}</p>
           <p class="font-16 bold color-heading-orange margin-bottom-0">How I Feel About Homework</p>
@@ -48,12 +34,67 @@
           <p class="font-16 margin-bottom-20">{{ profile.climbOrRide }}</p>
           <p class="font-16 bold color-heading-orange margin-bottom-0">What Kind Of Dog I Would Be</p>
           <p class="font-16 margin-bottom-20">{{ profile.dogKind }}</p>
-        </div>
-        <br>
+      </div>
+    </div> 
+  </div> <!-- col-md-3 -->
+  <div class="col-md-9">
+    <div class="row" style="margin-top: 40px; padding-top: 20px; padding-bottom: 10px; border: 1px lightgrey solid; background-color: #F2F2F2; border-radius: 20px">
+      <div class="text-center">
+        <p class="bold" style="font-size: 28px;">Add New Activity</p>
         <br>
       </div>
-    </div>
-  </form>
-  </div>
-  </div>
-</div>
+      <div class="col-md-2" style="padding-left: 40px">
+        <form role="form" class="form-horizontal" name="activityInfo" novalidate>
+          <label class="radio-inline"><input type="radio" name="runWalk" ng-model="activityForm.activityType" value="Run" required>Run</label>
+          <label class="radio-inline"><input type="radio" name="runWalk" ng-model="activityForm.activityType" value="Walk" required>Walk</label>
+      </div>        
+      <div class="col-md-2" style="padding-left: 20px">  
+          <input name="activityMinutes" ng-model="activityForm.activityMinutes" style="width: 40px"required>
+          <p style="display: inline-block; margin-left: 10px">Mins</p>
+          <input name="activityMiles" ng-model="activityForm.activityMiles" style="width: 40px" required>
+          <p style="display: inline-block; margin-left: 10px">Miles</p>
+      </div>
+      <div class="col-md-2 text-center" style="padding-top: 10px"> 
+        <p class="input-group">
+            <button type="button" class="btn btn-default" ng-click="open($event)"><i class="glyphicon glyphicon-calendar" style="display: inline-block"></i></button>
+            <input type="text" class="form-control" datepicker-popup="{{format}}" ng-model="activityForm.activityDate" is-open="opened" min-date="minDate" max-date="'2016-06-22'" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" close-text="Close" style="width: 60px; display: inline-block" placeholder="Date" />
+         <!--  </span> -->
+          </p>
+        </div>
+        <div class="col-md-3 text-center"> 
+            <p class="uploader-blue-button">
+                <uploadcare-widget
+                ng-model="object.image.info.uuid"
+                data-public-key="4cae35605f451e88cb88"
+                data-locale="en"
+                data-tabs="file facebook instagram camera"
+                data-images-only="true"
+                data-path-value="true"
+                data-preview-step="true"
+                data-clearable="true"
+                data-crop="200:200"
+                data-autostore="true"
+                on-upload-complete="onUCUploadComplete(info)"
+                on-widget-ready="onUCWidgetReady(widget)"
+                value="{{ object.image.info.cdnUrl }}"
+                />
+            </p>
+            <p>(optional)</p>
+        </div>
+        <div class="col-md-3 text-center" style="padding-top: 20px">
+          <a href="" ng-click="activitySubmit()" class="btn-blue">Submit</a>
+        <p ng-show="activitySuccess" style="margin-top: 10px">Submitted!</p>
+        </div>
+      </form>
+    </div> <!-- row -->
+    <div class="row text-center" style="margin-bottom: 20px; margin-top: 20px; padding-top: 20px; border: 1px lightgrey solid; background-color: #F2F2F2; border-radius: 20px">
+      <p class="bold" style="font-size: 28px;">Activities Graph</p>
+      <br>
+      <p>This data is a placeholder until the graph is added to this page</p>
+        <div ng-repeat="activity in userActivitiesArray">
+        <p><strong>Type:</strong> {{ activity.activityType }}&nbsp;&nbsp;&nbsp;<strong>Minutes:</strong> {{ activity.activityMinutes }}&nbsp;&nbsp;&nbsp;<strong>Miles:</strong> {{ activity.activityMiles }}&nbsp;&nbsp;&nbsp;<strong>Date:</strong> {{ activity.activityDate }}&nbsp;&nbsp;&nbsp;<img ng-src="{{ activity.activityImage }}" width="20" height="20">
+        <br>
+      </div>
+    </div> <!-- row -->
+  </div> <!-- col-md-8 -->
+</div> <!-- container -->

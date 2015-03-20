@@ -25,6 +25,7 @@ angular.module('myApp.home', ['ngRoute','firebase', 'ui.bootstrap'])
     });
     modalInstance.result.then(function (authData) {
       $scope.authData = authData;
+      modalInstance.dismiss();
     });
   };
 
@@ -32,9 +33,11 @@ angular.module('myApp.home', ['ngRoute','firebase', 'ui.bootstrap'])
     var modalInstance = $modal.open({
       templateUrl: '/learn/learn.html',
       controller: 'LearnCtrl',
-      size: 'lg'
+      size: 'md'
     });
     modalInstance.result.then(function () {
+      modalInstance.dismiss();
+      $scope.openSignup();
     });
   };
 

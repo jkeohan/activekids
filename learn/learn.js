@@ -2,7 +2,7 @@
 
 angular.module('myApp.learn', ['ngRoute'])
 
-.controller('LearnCtrl', function($scope, $modalInstance) {
+.controller('LearnCtrl', function($scope, $modalInstance, $modal) {
 
   $scope.firstPageLearn = true;
 

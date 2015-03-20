@@ -31,18 +31,11 @@
 				<h3 style="margin-bottom: 20px"><strong>Hi {{formInfo.firstName}}!</strong></h3>
 				<h3><strong>How old are you?</strong></h3>
 				<br>
-  			<div class="form-group text-center">
-					<select class="form-control" style="width: initial; margin-left: auto; margin-right: auto" ng-model="formInfo.age">
-            <option value="7">7</option>
-            <option value="8">8</option>
-            <option value="9">9</option>
-            <option value="10">10</option>
-						<option value="11">11</option>
-						<option value="12">12</option>
-						<option value="13">13</option>
-          </select>
-          <br>
-					<p ng-show="!formInfo.age && ageSubmitted" class="help-block error-orange" style="margin-top: 10px">Please tell us your age</p>
+  			<div class="form-group">
+					<div style="padding-left: 46%; padding-right: 46%; margin-bottom: 10px">
+    				<input class="form-control" name="favoriteAnimal" ng-model="formInfo.age" required>
+    			</div>
+					<!-- <p ng-show="!formInfo.age && ageSubmitted" class="help-block error-orange" style="margin-top: 10px">Please tell us your age</p> -->
 				</div>
 				<div style="padding-left: 20%; padding-right: 20%">
     				<div class="progress" style="margin-top: 40px">
@@ -180,7 +173,7 @@
   					<p class="uploader-blue-button">
 							<uploadcare-widget
   							ng-model="object.image.info.uuid"
-  							data-public-key="demopublickey"
+  							data-public-key="4a041b6a44cc31069fea"
   							data-locale="en"
   							data-tabs="file facebook instagram camera"
   							data-images-only="true"
@@ -196,7 +189,7 @@
  							/>
 						</p>
 						<br>
-						<p ng-show="!imageReceived && photoSubmitted" class="help-block error-orange">Please upload an image for your profile</p>
+						<!-- <p ng-show="!imageReceived && photoSubmitted" class="help-block error-orange">Please upload an image for your profile</p> -->
 					<br>
 					<a class="btn-blue" tabindex="3" ng-click="photoSubmit()">Submit</a>
 					<div class="alert alert-info" style="margin-top: 10px" ng-show="loading">Loading...</div>
