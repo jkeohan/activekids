@@ -1,0 +1,209 @@
+<div class="container">
+	<div class="row">
+		<img ng-src="images/background.png" id="background">
+		<div class="col-md-2">
+		</div>
+    <div class="col-md-8 col-sm-12 text-center color-background-page-header" style="padding-left: 10%; padding-right: 10%; padding-top: 30px; margin-top: 40px; border-radius: 80px; border: 1px #E0E0E0 solid">
+    <form role="form" class="form-horizontal" name="userInfo" novalidate>
+    	<div ng-show="surveyQuestion === 1">	
+      <h3><strong>Welcome!</strong></h3>
+				<div class="form-group" ng-class="{ 'has-error' : userInfo.firstName.$invalid && submitted }">
+					<h3 style="margin-bottom: 30px"><strong>What's your first name?</strong></h3>
+					<div style="padding-left: 30%; padding-right: 30%; margin-bottom: 10px">
+    				<input class="form-control" placeholder="First name" name="firstName" ng-model="formInfo.firstName" required>
+    			</div>
+    			<p ng-show="userInfo.firstName.$invalid && firstNameSubmitted" class="help-block error-orange" style="margin-top: 10px">Please tell us your name</p>
+    			<div style="padding-left: 20%; padding-right: 20%">
+    				<div class="progress" style="margin-top: 40px">
+  						<div class="progress-bar progress-bar-info progress-bar-striped active" role="progressbar" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100" style="width: 5%">
+    						<span class="sr-only">5% Complete</span>
+  						</div>
+						</div>
+					</div>
+					<p class="font-16 color-blue">1 of 8</p>
+					<br>
+					<a href="" ng-click="firstNameSubmit()" class="btn-blue">Next <span class="glyphicon glyphicon-chevron-right" style="font-size: 14px" aria-hidden="true"></span></a>
+					<br>
+					<p>&nbsp;</p>
+    		</div>
+  		</div>
+  		 <div ng-show="surveyQuestion === 2">	
+				<h3 style="margin-bottom: 20px"><strong>Hi {{formInfo.firstName}}!</strong></h3>
+				<h3><strong>How old are you?</strong></h3>
+				<br>
+  			<div class="form-group">
+					<div style="padding-left: 46%; padding-right: 46%; margin-bottom: 10px">
+    				<input class="form-control" name="favoriteAnimal" ng-model="formInfo.age" required>
+    			</div>
+					<!-- <p ng-show="!formInfo.age && ageSubmitted" class="help-block error-orange" style="margin-top: 10px">Please tell us your age</p> -->
+				</div>
+				<div style="padding-left: 20%; padding-right: 20%">
+    				<div class="progress" style="margin-top: 40px">
+  						<div class="progress-bar progress-bar-info progress-bar-striped active" role="progressbar" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100" style="width: 20%">
+    						<span class="sr-only">20% Complete</span>
+  						</div>
+						</div>
+					</div>
+					<p class="font-16 color-blue">2 of 8</p>
+					<br>
+					<a href="" ng-click="surveyQuestion = 1" class="btn-grey" style="margin-right: 5px"><span class="glyphicon glyphicon-chevron-left" style="font-size: 14px" aria-hidden="true"></span> Back</a>
+					<a href="" ng-click="ageSubmit()" class="btn-blue">Next <span class="glyphicon glyphicon-chevron-right" style="font-size: 14px" aria-hidden="true"></span></a>
+					<br>
+					<p>&nbsp;</p>
+			</div>
+  		<div ng-show="surveyQuestion === 3">	
+				<h3 style="margin-bottom: 20px"><strong>Great!</strong></h3>
+				<h3><strong>What's your favorite animal?</strong></h3>
+				<br>
+  			<div class="form-group">
+					<div style="padding-left: 30%; padding-right: 30%; margin-bottom: 10px">
+    				<input class="form-control" placeholder="Favorite animal" name="favoriteAnimal" ng-model="formInfo.favoriteAnimal" required>
+    			</div>
+				</div>
+				<div style="padding-left: 20%; padding-right: 20%">
+    				<div class="progress" style="margin-top: 40px">
+  						<div class="progress-bar progress-bar-info progress-bar-striped active" role="progressbar" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100" style="width: 30%">
+    						<span class="sr-only">30% Complete</span>
+  						</div>
+						</div>
+					</div>
+					<p class="font-16 color-blue">3 of 8</p>
+					<br>
+					<a href="" ng-click="surveyQuestion = 2" class="btn-grey" style="margin-right: 5px"><span class="glyphicon glyphicon-chevron-left" style="font-size: 14px" aria-hidden="true"></span> Back</a>
+					<a href="" ng-click="favoriteAnimalSubmit()" class="btn-blue" style="margin-left: 5px">Next <span class="glyphicon glyphicon-chevron-right" style="font-size: 14px" aria-hidden="true"></span></a>
+					<br>
+					<p>&nbsp;</p>
+			</div>
+			<div ng-show="surveyQuestion === 4">	
+				<h3 style="margin-bottom: 20px"><strong>Great!</strong></h3>
+				<h3><strong>So, how do you feel about homework?</strong></h3>
+				<br>
+  			<div class="form-group">
+					<div style="padding-left: 30%; padding-right: 30%; margin-bottom: 10px">
+    				<input class="form-control" placeholder="homework" name="homework" ng-model="formInfo.homework" required>
+    			</div>
+				</div>
+				<div style="padding-left: 20%; padding-right: 20%">
+    				<div class="progress" style="margin-top: 40px">
+  						<div class="progress-bar progress-bar-info progress-bar-striped active" role="progressbar" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100" style="width: 50%">
+    						<span class="sr-only">50% Complete</span>
+  						</div>
+						</div>
+					</div>
+					<p class="font-16 color-blue">4 of 8</p>
+					<br>
+					<a href="" ng-click="surveyQuestion = 3" class="btn-grey" style="margin-right: 5px"><span class="glyphicon glyphicon-chevron-left" style="font-size: 14px" aria-hidden="true"></span> Back</a>
+					<a href="" ng-click="homeworkSubmit()" class="btn-blue" style="margin-left: 5px">Next <span class="glyphicon glyphicon-chevron-right" style="font-size: 14px" aria-hidden="true"></span></a>
+					<br>
+					<p>&nbsp;</p>
+			</div>
+			<div ng-show="surveyQuestion === 5">	
+				<!-- <h3 style="margin-bottom: 20px"><strong>Great!</strong></h3> -->
+				<h3><strong>What's your favorite season?</strong></h3>
+				<br>
+  			<div class="form-group">
+					<div style="padding-left: 30%; padding-right: 30%; margin-bottom: 10px">
+    				<input class="form-control" placeholder="Favorite season" name="favoriteSeason" ng-model="formInfo.favoriteSeason" required>
+    			</div>
+				</div>
+				<div style="padding-left: 20%; padding-right: 20%">
+    				<div class="progress" style="margin-top: 40px">
+  						<div class="progress-bar progress-bar-info progress-bar-striped active" role="progressbar" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100" style="width: 60%">
+    						<span class="sr-only">60% Complete</span>
+  						</div>
+						</div>
+					</div>
+					<p class="font-16 color-blue">5 of 8</p>
+					<br>
+					<a href="" ng-click="surveyQuestion = 4" class="btn-grey" style="margin-right: 5px"><span class="glyphicon glyphicon-chevron-left" style="font-size: 14px" aria-hidden="true"></span> Back</a>
+					<a href="" ng-click="favoriteSeasonSubmit()" class="btn-blue" style="margin-left: 5px">Next <span class="glyphicon glyphicon-chevron-right" style="font-size: 14px" aria-hidden="true"></span></a>
+					<br>
+					<p>&nbsp;</p>
+			</div>
+			<div ng-show="surveyQuestion === 6">	
+				<!-- <h3 style="margin-bottom: 20px"><strong>Great!</strong></h3> -->
+				<h3><strong>Would you rather climb a tree or ride a bike?</strong></h3>
+				<br>
+  			<div class="form-group">
+					<div style="padding-left: 30%; padding-right: 30%; margin-bottom: 10px">
+    				<input class="form-control" placeholder="Climb tree or ride bike" name="climbOrRide" ng-model="formInfo.climbOrRide" required>
+    			</div>
+				</div>
+				<div style="padding-left: 20%; padding-right: 20%">
+    				<div class="progress" style="margin-top: 40px">
+  						<div class="progress-bar progress-bar-info progress-bar-striped active" role="progressbar" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100" style="width: 70%">
+    						<span class="sr-only">70% Complete</span>
+  						</div>
+						</div>
+					</div>
+					<p class="font-16 color-blue">6 of 8</p>
+					<br>
+					<a href="" ng-click="surveyQuestion = 5" class="btn-grey" style="margin-right: 5px"><span class="glyphicon glyphicon-chevron-left" style="font-size: 14px" aria-hidden="true"></span> Back</a>
+					<a href="" ng-click="climbOrRideSubmit()" class="btn-blue" style="margin-left: 5px">Next <span class="glyphicon glyphicon-chevron-right" style="font-size: 14px" aria-hidden="true"></span></a>
+					<br>
+					<p>&nbsp;</p>
+			</div>
+		  <div ng-show="surveyQuestion === 7">	
+				<!-- <h3 style="margin-bottom: 20px"><strong>Great!</strong></h3> -->
+				<h3><strong>If you were a dog, what kind of dog would you be?</strong></h3>
+				<br>
+  			<div class="form-group">
+					<div style="padding-left: 30%; padding-right: 30%; margin-bottom: 10px">
+    				<input class="form-control" placeholder="Kind of dog" name="dogKind" ng-model="formInfo.dogKind" required>
+    			</div>
+				</div>
+				<div style="padding-left: 20%; padding-right: 20%">
+    				<div class="progress" style="margin-top: 40px">
+  						<div class="progress-bar progress-bar-info progress-bar-striped active" role="progressbar" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100" style="width: 80%">
+    						<span class="sr-only">80% Complete</span>
+  						</div>
+						</div>
+					</div>
+					<p class="font-16 color-blue">7 of 8</p>
+					<br>
+					<a href="" ng-click="surveyQuestion = 6" class="btn-grey" style="margin-right: 5px"><span class="glyphicon glyphicon-chevron-left" style="font-size: 14px" aria-hidden="true"></span> Back</a>
+					<a href="" ng-click="dogKindSubmit()" class="btn-blue" style="margin-left: 5px">Next <span class="glyphicon glyphicon-chevron-right" style="font-size: 14px" aria-hidden="true"></span></a>
+					<br>
+					<p>&nbsp;</p>
+			</div>
+  		<div ng-show="surveyQuestion === 8">	
+					<h3 style="margin-bottom: 20px"><strong>One last thing.</strong></h3>
+					<h4>Select a photo or image for your avatar.</h4>
+					<br>
+  					<p class="uploader-blue-button">
+							<uploadcare-widget
+  							ng-model="object.image.info.uuid"
+  							data-public-key="4a041b6a44cc31069fea"
+  							data-locale="en"
+  							data-tabs="file facebook instagram camera"
+  							data-images-only="true"
+  							data-path-value="true"
+  							data-preview-step="true"
+  							data-clearable="true"
+  							data-multiple="false"
+  							data-crop="200:200"
+  							data-autostore="true"
+  							on-upload-complete="onUCUploadComplete(info)"
+  							on-widget-ready="onUCWidgetReady(widget)"
+  							value="{{ object.image.info.cdnUrl }}"
+ 							/>
+						</p>
+						<br>
+						<!-- <p ng-show="!imageReceived && photoSubmitted" class="help-block error-orange">Please upload an image for your profile</p> -->
+					<br>
+					<a class="btn-blue" tabindex="3" ng-click="photoSubmit()">Submit</a>
+					<div class="alert alert-info" style="margin-top: 10px" ng-show="loading">Loading...</div>
+					<br>
+					<p>&nbsp;</p>
+					<br>
+				</div>
+					<br>
+					<p>&nbsp;</p>
+			</div>
+		</form>
+		</div>
+		<div class="col-md-2">
+		</div>
+	</row>
+</div> <!-- container -->
+

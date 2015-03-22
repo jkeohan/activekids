@@ -1,0 +1,18 @@
+<div class="container">
+  <div class="row" style="border-radius: 5px; margin-bottom: 2%; margin-top: 30px" ng-cloak>
+    <div class="col-md-8 col-sm-12" style="padding: 0% 7%">
+    	<p style="padding-top: 40px" class="font-22 text-center">I can't wait to see what awesome graphs Joe is going to have here!</p>
+    	<p style="padding-top: 40px" class="font-22 text-center">Here's how data is added to the HTML page:</p>
+    	<p style="padding-top: 10px" class="font-22 text-center">User Age: {{ profile.age }}</p>
+    	<p style="padding-top: 10px" class="font-22 text-center">User FirstName: {{ profile.firstName }}</p>
+    	<br>
+    	<div ng-repeat="activity in userActivitiesArray">
+    		<p>Activity Type: {{ activity.activityType }}</p>
+    		<p>Minutes: {{ activity.activityMinutes }}</p>
+    		<p>Miles: {{ activity.activityMiles }}</p>
+            <img ng-src="{{ activity.activityImage }}">
+    		<br>
+    	</div>
+    </div> <!-- col-md-8 -->
+	</div> <!-- row -->
+</div> <!-- container -->
